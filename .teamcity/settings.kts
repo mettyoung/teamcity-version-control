@@ -31,7 +31,7 @@ project {
 }
 
 object Build : BuildType({
-    name = "Build"
+    name = "Continuous Integration"
 
     vcs {
         root(DslContext.settingsRoot)
