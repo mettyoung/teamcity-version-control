@@ -26,12 +26,25 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2018.1"
 
 project {
-
     buildType(Build)
+    buildType(StagingEnvironment)
 }
 
 object Build : BuildType({
     name = "Build"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
+object StagingEnvironment : BuildType({
+    name = "Staging Environment"
 
     vcs {
         root(DslContext.settingsRoot)
